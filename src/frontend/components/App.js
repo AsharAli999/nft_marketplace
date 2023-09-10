@@ -17,6 +17,7 @@ import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
 
 import './App.css';
+import ClaimNFT from "./ClaimNFT";
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -77,6 +78,9 @@ function App() {
               <Route path="/my-purchases" element={
                 <MyPurchases marketplace={marketplace} nft={nft} account={account} />
               } />
+              <Route path="/claim-nft" element={
+                <ClaimNFT marketplace={marketplace} nft={nft} account={account} />
+              } />
             </Routes>
           )}
         </div>
@@ -87,3 +91,17 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
