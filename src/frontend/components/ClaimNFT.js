@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import NFTAbi from '../contractsData/NFT.json';
@@ -72,7 +70,7 @@ const ClaimNFT = () => {
       {account ? (
         <div>
           <p>Connected Address: {account}</p>
-          {tokenURI && <img src={tokenURI} alt="NFT" style={{ maxWidth: '300px' }} />}
+          {tokenURI && <img src={tokenURI} alt="NFT" style={{ maxWidth: '400px' }} />}
           <button onClick={mintNFT}>Mint NFT</button>
         </div>
       ) : (
