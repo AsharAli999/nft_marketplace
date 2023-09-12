@@ -70,7 +70,7 @@ const ClaimNFT = () => {
       {account ? (
         <div>
           <p>Connected Address: {account}</p>
-          {tokenURI && <img src={tokenURI} alt="NFT" style={{ maxWidth: '400px' }} />}
+          {tokenURI && <img src={tokenURI} alt="NFT" style={{ maxWidth: '300px' }} />}
           <button onClick={mintNFT}>Mint NFT</button>
         </div>
       ) : (
