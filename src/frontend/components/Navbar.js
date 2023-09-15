@@ -6,9 +6,9 @@ import market from './market.png'
 
 const Navigation = ({ web3Handler, account }) => {
     return (
-        <Navbar expand="lg" bg="primary" variant="dark">
+        <Navbar expand="lg" bg="success" variant="dark">
             <Container>
-                <Navbar.Brand href="http://www.dappuniversity.com/bootcamp">
+                <Navbar.Brand href="/">
                     <img src={market} width="40" height="40" className="" alt="" />
                     &nbsp; Inceptia NFT Marketplace
                 </Navbar.Brand>
