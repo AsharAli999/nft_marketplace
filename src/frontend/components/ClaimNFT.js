@@ -65,17 +65,33 @@ const ClaimNFT = () => {
   };
 
   return (
-    <div>
-      <h1>NFT Minting App</h1>
-      {account ? (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
         <div>
-          <p>Connected Address: {account}</p>
-          {tokenURI && <img src={tokenURI} alt="NFT" style={{ maxWidth: '300px' }} />}
-          <button onClick={mintNFT}>Mint NFT</button>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">NFT Minting App</h2>
         </div>
-      ) : (
-        <button onClick={connectToMetaMask}>Connect to MetaMask Account</button>
-      )}
+        <div className="mb-4">
+          {account ? (
+            <div>
+              <p className="text-center">Connected Address: {account}</p>
+              {tokenURI && <img src={tokenURI} alt="NFT" className="mx-auto mt-4" style={{ maxWidth: '300px' }} />}
+              <button
+                onClick={mintNFT}
+                className="mt-4 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Mint NFT
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={connectToMetaMask}
+              className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Connect to MetaMask Account
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

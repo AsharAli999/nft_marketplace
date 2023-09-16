@@ -15,7 +15,7 @@ import NFTAddress from '../contractsData/NFT-address.json'
 import { useState } from 'react'
 import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
-
+import './index.css'
 import './App.css';
 import ClaimNFT from "./ClaimNFT";
 

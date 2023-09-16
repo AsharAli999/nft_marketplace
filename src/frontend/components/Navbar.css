@@ -1,0 +1,55 @@
+/* Custom CSS for Navbar */
+.CustomNavbar {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.CustomNavbar .navbar-brand {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.CustomNavbar .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.CustomNavbar .navbar-nav {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+  /* Adjust the gap between links */
+}
+
+.CustomNavbar .navbar-nav .nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.CustomNavbar .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.CustomNavbar .nav-button button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.CustomNavbar .nav-button button:hover {
+  background-color: #fff;
+  color: #28a745;
+}
