@@ -53,6 +53,7 @@ const ClaimNFT = () => {
 
       const signer = provider.getSigner();
       const uri = "https://ipfs.io/ipfs/QmRNwcmSPxpBV7Dyfy49ZbWWboTJkkMZ1awciHYj6skPTj?filename=";
+
       setTokenURI(uri);
 
       const tx = await nftContract.mint(uri);
