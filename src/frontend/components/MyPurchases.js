@@ -85,24 +85,20 @@ export default function MyPurchases({ marketplace, nft, account }) {
   return (
     <>
       <div className="container mt-14 mb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-10">
           {purchases.length > 0 ? (
             purchases.map((item, idx) => (
-              <div className="bg-white p-4 rounded-lg shadow-md" key={idx + 1}>
-                <div className="bg-gray-200 p-2 rounded-lg">
-                  <img
-                    src={item.image}
-                    alt="NFT images"
-                    className="object-cover rounded-lg w-full h-full"
-                  />
-                </div>
-                <div className="mt-4">
-                  <h4 className="text-lg font-semibold">{item.name}</h4>
-                  <div className="flex justify-between items-center mt-2">
-                    <div className="border border-gray-400 p-2 rounded-md">
-                      <small>{item.description}</small>
-                      <p>{item.totalPrice} ETH</p>
-                    </div>
+              <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg" key={idx + 1}>
+                <img
+                  src={item.image}
+                  alt="NFT images"
+                  className="object-cover w-full h-90"
+                />
+                <div className="p-4">
+                  <h4 className="text-white text-xl font-semibold">{item.name}</h4>
+                  <p className="text-gray-300 text-sm mt-2">{item.description}</p>
+                  <div className="flex justify-between items-center mt-4">
+                    <p className="text-white text-sm font-semibold">{item.totalPrice} ETH</p>
                     <button
                       onClick={() => handleRelistClick(item.itemId)}
                       className="bg-blue-500 text-white rounded-md px-4 py-2 text-sm hover:bg-blue-700 transition duration-300"
@@ -122,6 +118,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
       </div>
 
 
+
       {isModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -130,13 +127,13 @@ export default function MyPurchases({ marketplace, nft, account }) {
             </div>
 
             {/* This is your modal */}
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-gray-800  px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">Relist NFT</h3>
+                    <h3 className="text-lg leading-6 font-medium text-white">Relist NFT</h3>
                     <div className="mt-2">
-                      <label htmlFor="newPrice" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="newPrice" className="block text-sm font-medium text-white">
                         Enter New Price (ETH)
                       </label>
                       <div className="mt-1">
@@ -146,14 +143,14 @@ export default function MyPurchases({ marketplace, nft, account }) {
                           placeholder="Enter new price"
                           value={newPrice}
                           onChange={(e) => setNewPrice(e.target.value)}
-                          className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                          className="block w-full p-1 mt-5 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <div className="bg-gray-800  px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   onClick={handleRelist}
                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
@@ -170,7 +167,8 @@ export default function MyPurchases({ marketplace, nft, account }) {
             </div>
           </div>
         </div>
-      )}
+      )
+      }
     </>
   );
 }

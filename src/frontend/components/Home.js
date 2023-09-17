@@ -53,8 +53,8 @@ const Home = ({ marketplace, nft }) => {
   }, [])
 
   if (loading) return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Loading...</h2>
+    <main style={{ padding: "3rem 0" }}>
+      <h2 className="text-white">Loading...</h2>
     </main>
   )
 
@@ -130,7 +130,7 @@ const Home = ({ marketplace, nft }) => {
             </div>
             <button
               onClick={() => buyMarketItem(item)}
-              className={Style.NFTCard_box_buy_button}
+              className={`${Style.NFTCard_box_buy_button} mt-5`} // Added mt-2 for top margin
             >
               Buy
             </button>

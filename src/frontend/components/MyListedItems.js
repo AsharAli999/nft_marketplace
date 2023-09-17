@@ -7,7 +7,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 function renderSoldItems(items) {
   return (
     <>
-      <h2 className="text-2xl font-semibold mb-4">Sold NFTs</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-white">Sold NFTs</h2>
 
       <div className={`container ${Style.NFTCard}`}> {/* Use the existing CSS class */}
         {items.map((item, idx) => (
@@ -98,7 +98,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
 
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
-      <h2>Loading...</h2>
+      <h2 className='text-white'>Loading...</h2>
     </main>
   )
 
@@ -106,7 +106,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
     <div className="flex justify-center">
       {listedItems.length > 0 ? (
         <div className="px-5 py-3 container">
-          <h2 className="text-2xl font-semibold mb-4">Listed NFTs</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-white">Listed NFTs</h2>
 
           <div className={`container ${Style.NFTCard}`}> {/* Use the existing CSS class */}
             {listedItems.map((item, idx) => (

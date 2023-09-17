@@ -71,8 +71,8 @@ const Create = ({ marketplace, nft }) => {
   }
 
   return (
-    <div className="container mx-auto mt-20 p-8 bg-green-200 shadow-md rounded-lg max-w-3xl">
-      <h1 className="text-2xl font-semibold mb-8">Create NFT</h1>
+    <div className="container mx-auto mt-20 p-8 bg-[#2c2a2cfd] shadow-md rounded-lg max-w-3xl">
+      <h1 className="text-2xl font-semibold mb-8 text-white">Create NFT</h1>
       <form className="space-y-4">
         <div className="mb-4">
           <input

@@ -9,8 +9,8 @@ const HeroSection = () => {
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left}>
-          <h1>Discover, collect, and sell NFTs </h1>
-          <p>
+          <h1 className="text-white">Discover, collect, and sell NFTs </h1>
+          <p className="text-white">
             Discover the most outstanding NTFs in all topics of life. Creative
             your NTFs and sell them
           </p>

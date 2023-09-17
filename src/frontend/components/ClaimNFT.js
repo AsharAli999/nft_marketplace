@@ -65,15 +65,15 @@ const ClaimNFT = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-6 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1a1c1f' }}>
+      <div className="max-w-md w-full space-y-4">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">NFT Minting App</h2>
+          <h2 className="text-center text-3xl font-extrabold text-white">NFT Minting App</h2>
         </div>
         <div className="mb-4">
           {account ? (
             <div>
-              <p className="text-center">Connected Address: {account}</p>
+              <p className="text-center text-white">Connected Address: {account}</p>
               {tokenURI && <img src={tokenURI} alt="NFT" className="mx-auto mt-4" style={{ maxWidth: '300px' }} />}
               <button
                 onClick={mintNFT}
@@ -85,7 +85,7 @@ const ClaimNFT = () => {
           ) : (
             <button
               onClick={connectToMetaMask}
-              className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full inline-flex text-white items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Connect to MetaMask Account
             </button>
