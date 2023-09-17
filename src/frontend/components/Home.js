@@ -130,7 +130,8 @@ const Home = ({ marketplace, nft }) => {
             </div>
             <button
               onClick={() => buyMarketItem(item)}
-              className={`${Style.NFTCard_box_buy_button} mt-5`} // Added mt-2 for top margin
+              className={`${Style.NFTCard_box_buy_button} mt-5`}
+              style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
             >
               Buy
             </button>

@@ -84,6 +84,7 @@ const Create = ({ marketplace, nft }) => {
           <label
             htmlFor="file-input"
             className="cursor-pointer bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg"
+            style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
           >
             Choose File
           </label>
@@ -116,6 +117,7 @@ const Create = ({ marketplace, nft }) => {
             onClick={sendFileToIPFS}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full"
             size="lg"
+            style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
           >
             Create & List NFT!
           </Button>

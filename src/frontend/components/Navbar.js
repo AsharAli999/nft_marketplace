@@ -4,7 +4,7 @@ import market from './market.png';
 
 const Navigation = ({ web3Handler, account }) => {
     return (
-        <div className="bg-green-600 py-2 px-4 flex items-center justify-between">
+        <div className=" bg-[#161616fd] py-4 px-4 flex items-center justify-between" >
             {/* Navbar Brand */}
             <Link to="/" className="text-white flex items-center space-x-2">
                 <img src={market} alt="" className="w-8 h-8" />

@@ -102,6 +102,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
                     <button
                       onClick={() => handleRelistClick(item.itemId)}
                       className="bg-blue-500 text-white rounded-md px-4 py-2 text-sm hover:bg-blue-700 transition duration-300"
+                      style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
                     >
                       Relist
                     </button>
@@ -154,6 +155,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
                 <button
                   onClick={handleRelist}
                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
                 >
                   Confirm Relist
                 </button>
