@@ -54,7 +54,7 @@ const Home = ({ marketplace, nft }) => {
 
   if (loading) return (
     <main style={{ padding: "3rem 0" }}>
-      <h2 className="text-white">Loading...</h2>
+      <h2 className="text-white text-2xl">Loading...</h2>
     </main>
   )
 

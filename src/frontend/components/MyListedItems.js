@@ -98,7 +98,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
 
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
-      <h2 className='text-white'>Loading...</h2>
+      <h2 className='text-white text-2xl'>Loading...</h2>
     </main>
   )
 
@@ -150,7 +150,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
         </div>
       ) : (
         <main style={{ padding: "1rem 0" }}>
-          <h2>No listed assets</h2>
+          <h2 className='text-white text-2xl'>No listed assets</h2>
         </main>
       )}
     </div>

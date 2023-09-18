@@ -85,9 +85,14 @@ export default function MyPurchases({ marketplace, nft, account }) {
   return (
     <>
       <div className="container mt-14 mb-10">
+        <main style={{ padding: '1rem 0' }}>
+          <h2 className='text-white text-2xl'>My purchases</h2>
+        </main>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-10">
+
           {purchases.length > 0 ? (
             purchases.map((item, idx) => (
+
               <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg" key={idx + 1}>
                 <img
                   src={item.image}
@@ -112,7 +117,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
             ))
           ) : (
             <main style={{ padding: '1rem 0' }}>
-              <h2>No purchases</h2>
+              <h2 className='text-white text-2xl'>No purchases</h2>
             </main>
           )}
         </div>
