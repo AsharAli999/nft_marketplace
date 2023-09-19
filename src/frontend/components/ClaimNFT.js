@@ -6,8 +6,9 @@ import NFTAddress from '../contractsData/NFT-address.json';
 const ClaimNFT = () => {
   const [nftContract, setNftContract] = useState(null);
   const [provider, setProvider] = useState(null);
-  const [tokenURI, setTokenURI] = useState(null);
+  const [tokenURI, setTokenURI] = useState('https://default-image-url.com'); // Set your default image URL here
   const [account, setAccount] = useState(null);
+  const [isMinting, setIsMinting] = useState(false);
 
   useEffect(() => {
     async function setup() {
@@ -54,13 +55,17 @@ const ClaimNFT = () => {
       const signer = provider.getSigner();
       const uri = "https://ipfs.io/ipfs/QmRNwcmSPxpBV7Dyfy49ZbWWboTJkkMZ1awciHYj6skPTj?filename=";
 
-      setTokenURI(uri);
+      setIsMinting(true);
 
       const tx = await nftContract.mint(uri);
       await tx.wait();
 
+      setTokenURI(uri);
+      setIsMinting(false);
+
       alert('NFT minted successfully!');
     } catch (error) {
+      setIsMinting(false);
       console.error('Error minting NFT:', error);
     }
   };
@@ -72,18 +77,19 @@ const ClaimNFT = () => {
           <h2 className="text-center text-3xl font-extrabold text-white">NFT Minting App</h2>
         </div>
         <div className="mb-4">
+          <div className="card">
+            <img src={tokenURI} alt="NFT" className="mx-auto mt-4" style={{ maxWidth: '300px' }} />
+            <button
+              onClick={mintNFT}
+              className="mt-4 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
+              disabled={isMinting}
+            >
+              {isMinting ? 'Minting...' : 'Mint NFT'}
+            </button>
+          </div>
           {account ? (
-            <div>
-              <p className="text-center text-white">Connected Address: {account}</p>
-              {tokenURI && <img src={tokenURI} alt="NFT" className="mx-auto mt-4" style={{ maxWidth: '300px' }} />}
-              <button
-                onClick={mintNFT}
-                className="mt-4 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
-              >
-                Mint NFT
-              </button>
-            </div>
+            <p className="text-center text-white">Connected Address: {account}</p>
           ) : (
             <button
               onClick={connectToMetaMask}

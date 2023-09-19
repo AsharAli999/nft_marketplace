@@ -77,7 +77,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
   if (loading) {
     return (
       <main style={{ padding: '1rem 0' }}>
-        <h2>Loading...</h2>
+        <h2 className='text-white text-2xl'>Loading...</h2>
       </main>
     );
   }
