@@ -18,6 +18,8 @@ const Navigation = ({ web3Handler, account }) => {
                 <Link to="/my-listed-items" className="text-white hover:underline">My Listed Items</Link>
                 <Link to="/my-purchases" className="text-white hover:underline">My Purchases</Link>
                 <Link to="/claim-nft" className="text-white hover:underline">Claim NFT</Link>
+                <Link to="/update-nft" className="text-white hover:underline">Update NFT</Link>
+
             </div>
 
             {/* Wallet Button */}

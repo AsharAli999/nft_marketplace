@@ -14,6 +14,7 @@ import { Spinner } from 'react-bootstrap';
 import './index.css';
 import './App.css';
 import ClaimNFT from './ClaimNFT';
+import UpdateNFT from './UpdateNFT';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -105,6 +106,7 @@ function App() {
               <Route path="/my-listed-items" element={<MyListedItems marketplace={marketplace} nft={nft} account={account} />} />
               <Route path="/my-purchases" element={<MyPurchases marketplace={marketplace} nft={nft} account={account} />} />
               <Route path="/claim-nft" element={<ClaimNFT marketplace={marketplace} nft={nft} account={account} />} />
+              <Route path="/update-nft" element={<UpdateNFT marketplace={marketplace} nft={nft} account={account} />} />
             </Routes>
           )}
         </div>
