@@ -12,9 +12,8 @@ const HeroSection = () => {
           <h2 className="text-white text-left text-5xl mt-4">Discover, collect, and sell NFTs </h2>
           <p className="text-white text-left mt-8">
             Discover the most outstanding NTFs in all topics of life. Creative
-            your NTFs and sell them
+            your NTFs and sell them.
           </p>
-          {/* <Button btnName="Start your search" handleClick={() => { }} /> */}
         </div>
         <div className={Style.heroSection_box_right}>
           <img src="https://www.ie.edu/insights/wp-content/uploads/2022/01/San-Jose-Feature.jpg" alt="Hero section" width={600} height={600} />

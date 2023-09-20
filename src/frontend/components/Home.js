@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
-import { Row, Col, Card, Button, Container } from 'react-bootstrap'
 import Style from './NFTCard.module.css';
 import { BsImages } from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
