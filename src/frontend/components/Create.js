@@ -8,6 +8,7 @@ const Create = ({ marketplace, nft }) => {
   const [name, setName] = useState("");
   const [desc, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [isCreating, setIsCreating] = useState(false); // Add isCreating state
 
   const sendJSONtoIPFS = async (ImgHash) => {
     try {
@@ -39,6 +40,8 @@ const Create = ({ marketplace, nft }) => {
 
     if (fileImg) {
       try {
+        setIsCreating(true); // Set isCreating to true before starting the process
+
         const formData = new FormData();
         formData.append("file", fileImg);
         const resFile = await axios({
@@ -58,6 +61,7 @@ const Create = ({ marketplace, nft }) => {
       } catch (error) {
         console.log("File to IPFS: ");
         console.log(error);
+        setIsCreating(false); // Make sure to set isCreating to false on error as well
       }
     }
   }
@@ -68,6 +72,12 @@ const Create = ({ marketplace, nft }) => {
     await (await nft.setApprovalForAll(marketplace.address, true)).wait()
     const listingPrice = ethers.utils.parseEther(price.toString())
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait()
+    setIsCreating(false); // Set isCreating to false after the process is complete
+    // Clear the form input data
+    setFile(null);
+    setName("");
+    setDescription("");
+    setPrice("");
   }
 
   return (
@@ -93,6 +103,7 @@ const Create = ({ marketplace, nft }) => {
           <input
             type="text"
             placeholder="Name"
+            value={name}
             onChange={(e) => setName(e.target.value)}
             className="border py-2 px-3 rounded-lg focus:outline-none focus:ring focus:border-blue-300 w-full"
           />
@@ -100,6 +111,7 @@ const Create = ({ marketplace, nft }) => {
         <div className="mb-4">
           <textarea
             placeholder="Description"
+            value={desc}
             onChange={(e) => setDescription(e.target.value)}
             className="border py-2 px-3 rounded-lg focus:outline-none focus:ring focus:border-blue-300 w-full"
           />
@@ -108,6 +120,7 @@ const Create = ({ marketplace, nft }) => {
           <input
             type="number"
             placeholder="Price in ETH"
+            value={price}
             onChange={(e) => setPrice(e.target.value)}
             className="border py-2 px-3 rounded-lg focus:outline-none focus:ring focus:border-blue-300 w-full"
           />
@@ -115,11 +128,15 @@ const Create = ({ marketplace, nft }) => {
         <div className="text-center">
           <Button
             onClick={sendFileToIPFS}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full"
+            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full ${isCreating ? "cursor-not-allowed opacity-70" : ""
+              }`}
             size="lg"
-            style={{ background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)' }}
+            disabled={isCreating}
+            style={{
+              background: 'linear-gradient(90deg, rgba(50,168,56,1) 0%, rgba(50,168,56,1) 50%, rgba(87,194,33,1) 50%, rgba(87,194,33,1) 100%)',
+            }}
           >
-            Create & List NFT!
+            {isCreating ? "Creating..." : "Create & List NFT"}
           </Button>
         </div>
       </form>
