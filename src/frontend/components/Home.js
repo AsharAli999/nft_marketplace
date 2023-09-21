@@ -9,7 +9,7 @@ const Home = ({ marketplace, nft }) => {
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState([])
   const [like, setLike] = useState(true);
-  const [buyingState, setBuyingState] = useState({}); // Use an object to track buying state for each NFT
+  const [buyingState, setBuyingState] = useState({});
 
   const likeNft = () => {
     if (!like) {

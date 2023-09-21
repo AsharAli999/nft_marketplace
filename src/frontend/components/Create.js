@@ -8,7 +8,7 @@ const Create = ({ marketplace, nft }) => {
   const [name, setName] = useState("");
   const [desc, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [isCreating, setIsCreating] = useState(false); // Add isCreating state
+  const [isCreating, setIsCreating] = useState(false);
 
   const sendJSONtoIPFS = async (ImgHash) => {
     try {
