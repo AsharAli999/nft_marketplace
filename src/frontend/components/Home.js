@@ -97,7 +97,7 @@ const Home = ({ marketplace, nft }) => {
                       }
                     />
                   )}
-                  {''} 22
+                  {""} 22
                 </div>
               </div>
             </div>
