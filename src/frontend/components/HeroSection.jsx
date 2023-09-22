@@ -1,6 +1,4 @@
 import React from "react";
-
-//INTERNAL IMPORT
 import Style from "./HeroSection.module.css";
 // import Button from "../Button/Button";
 
