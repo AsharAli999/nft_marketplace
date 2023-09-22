@@ -40,6 +40,7 @@ const Create = ({ marketplace, nft }) => {
 
     if (fileImg) {
       try {
+
         setIsCreating(true); // Set isCreating to true before starting the process
 
         const formData = new FormData();
