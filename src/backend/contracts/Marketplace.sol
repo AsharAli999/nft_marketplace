@@ -108,7 +108,6 @@ contract Marketplace is ReentrancyGuard {
         // Update the item's price and status
         item.price = _newPrice;
         item.sold = false;
-
         emit Offered(
             _itemId,
             address(item.nft),
@@ -117,7 +116,6 @@ contract Marketplace is ReentrancyGuard {
             msg.sender
         );
     }
-
     function getTotalPrice(uint _itemId) public view returns (uint) {
         return ((items[_itemId].price * (100 + feePercent)) / 100);
     }
