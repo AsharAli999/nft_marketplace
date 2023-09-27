@@ -5,6 +5,10 @@ import { BsImages } from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import HeroSection from './HeroSection';
 
+
+
+
+
 const Home = ({ marketplace, nft }) => {
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState([])
